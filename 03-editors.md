@@ -31,7 +31,7 @@ Both Emacs and vim have built-in interactive tutorials that you can try.
 
 What terminal editor will you use? How did you make your decision?
 
-REPLACE THIS TEXT WITH YOUR RESPONSE
+Wow! People are very opinionated about the choice between Emacs and vim. After reading a number of articles on the subject, I've chosen Emacs. Some claim that while the learning curve is steep for Emacs, it is still easier for beginners than vim, and I would like to use a more sophisticated editor than nano.
 
 ---
 
@@ -61,6 +61,8 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
-REPLACE THIS TEXT WITH YOUR RESPONSE
+For the sake of consistency, Emacs again. I will also investigate customizing Sublime to work with Python, as I already have some familiarity with Sublime using other languages.
+
+I find it interesting in Emacs that killed text can be retrieved even if it is not the most recent kill using `M-y` and that all previously killed (but not deleted) text is stored. Emacs can be customized with `M-x customize`.
 
 ---

@@ -68,7 +68,7 @@ def fix_start(s):
     new_s = s.replace(s[0], '*')
     new_s = new_s.replace('*', s[0], 1)
     
-    return s
+    return new_s
 
 
 def mix_up(a, b):

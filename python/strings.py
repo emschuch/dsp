@@ -133,7 +133,14 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    
+    not_i = s.find('not')
+    bad_i = s.find('bad') + len('bad')
+    
+    if bad_i > not_i:
+        return s[:not_i] + 'good' + s[bad_i:]
+    else:
+        return s
 
 
 def front_back(a, b):
@@ -152,4 +159,23 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    
+    a_front, a_back = divide_string(a)
+    b_front, b_back = divide_string(b)
+    
+    return a_front + b_front + a_back + b_back
+    
+    
+def divide_string(s):
+    """
+    Divides string for use in front_back function.
+    """
+    
+    if len(s) % 2 != 0:
+        i = len(s)/2 + 1
+    else:
+        i = len(s)/2
+    front = s[:i]
+    back = s[i:]
+    return [front, back]
+

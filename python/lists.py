@@ -36,7 +36,10 @@ def front_x(words):
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
     
+    x_list = [s for s in words if s[0] == 'x']
+    notx_list = [s for s in words if s[0] != 'x']
     
+    return sorted(x_list) + sorted(notx_list)
 
 
 def sort_last(tuples):
@@ -53,7 +56,8 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    
+    return sorted(tuples, key=lambda tup: tup[-1])
 
 
 def remove_adjacent(nums):
@@ -72,7 +76,11 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    
+    # not working yet
+    # new_list = [nums[i] for i in range(len(nums)-1) if nums[i] != nums[i+1]]
+    
+    return new_list
 
 
 def linear_merge(list1, list2):
@@ -89,4 +97,6 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    
+    # are we meant to do something more complicated like a list comparison?
+    return sorted(list1 + list2)

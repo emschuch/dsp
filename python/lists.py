@@ -77,8 +77,15 @@ def remove_adjacent(nums):
     []
     """
     
-    # not working yet
+    # can't get list comprehension to work
     # new_list = [nums[i] for i in range(len(nums)-1) if nums[i] != nums[i+1]]
+    
+    #ok, this works
+    new_list = []
+    new_list.append(nums[0])
+    for i in range(len(nums)-1):
+        if nums[i] != nums[i+1]:
+            new_list.append(nums[i+1])
     
     return new_list
 

@@ -177,5 +177,5 @@ def divide_string(s):
         i = len(s)/2
     front = s[:i]
     back = s[i:]
-    return [front, back]
+    return front, back
 

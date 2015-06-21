@@ -31,11 +31,11 @@ How are Python lists and sets similar and different? Give examples of using both
 
 > Both lists and sets are a collection of elements, however a list is ordered and a set is unordered. In addition, sets do not contain duplicates, while a list may contain duplicate elements.
 >
-> A list may be used to keep track of elements that should remain in order. Say you roll a standard die 10 times and want to store the results: `rolls = [1, 4, 5, 2, 5, 3, 3, 6, 1, 2]`. Perhaps this is part of a 2 player game and you want to compare each roll to another player who also rolls 10 times. Lists will work because they are ordered and allowed to have duplicates.
+> A list may be used to keep track of elements that should remain in order. Say you roll a standard die 10 times and want to store the results: `rolls = [1, 4, 5, 2, 5, 3, 3, 6, 1, 2]`. Perhaps this is part of a 2 player game and you want to compare rolls at each index for each player. Lists will work because they are ordered and allowed to have duplicates.
 >
 > Sets are good for removing duplicates. Say you have two list of students, one for the fall semester and one for spring. Combining the lists and turning it into a set will remove duplicates of any students who took both fall and spring classes.
 >
-> For both lists and sets an element can be found with `element in list` or `element in set`, and a `True` or `False` value will be returned. However, lists have additional methods such as `list.index(element)` (which returns an index to tell you exactly where in the list the first instance of an element exists), and `list.count(element)` (which returns how many times an element occurs). Sets do not have such methods because they are unordered, so there is no index, and elements are only able to occur once.
+> For both lists and sets an element can be found with `element in list` or `element in set`, and a `True` value will be returned if the element is present. However, lists have additional methods such as `list.index(element)` (which returns an index to tell exactly where in the list the first instance exists), and `list.count(element)` (which returns how many times an element occurs). Sets do not have such methods because they are unordered, so there is no index, and elements are only able to occur once.
 
 ---
 
@@ -44,7 +44,9 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
-> The `lambda` operator is used for writing short, anonymous, in-line functions.
+> The `lambda` operator is used for writing short, anonymous, in-line functions. A lambda function is limited to a single expression. For example, this lambda function returns the absolute difference between two numbers, x and y: `lambda x, y: abs(x - y)`. Lambda expressions are used to make quick throw away functions when defining a named function would be tedious.
+>
+> Lambda can also be used for sorting tuples using a `key` argument. I did exactly that in the lists.py exercises with `return sorted(tuples, key=lambda tup: tup[-1])` This sorts a list of tuples by the last element of each tuple.
 
 ---
 
@@ -53,7 +55,13 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
-REPLACE THIS TEXT WITH YOUR RESPONSE
+> List comprehensions are a way of constructing new lists, often from other lists, sequences or iterables. They are useful for filtering lists or performing a function on a sequence of elements. For example, `lst = [x*2 for x in range(10) if x % 2 != 0]` creates a list of numbers from 0 to 10, multiplies the odd numbers by two, and stores them in a list, `lst = [2, 6, 10, 14, 18]`.
+>
+> The built-in `map()` function takes two arguments, a function and a sequence, and performs the function on each element in the sequence. The built-in `filter()` funtion also takes a function and a sequence as arguments and returns a list from the sequence for which the function is true. To rewrite the list comprehension above with map and filter, `lst = map(lambda x: x*2, filter(lambda x: x % 2 != 0, range(10)))`. While this outputs the same result as above, it is a bit less readable to a human.
+>
+> Set comprehensions work like list comprehensions but use curly brackets instead of square brackets. `st = {x*2 for x in range(10) if x % 2 != 0}` creates an unordered set of elements with the same values as the elements in `lst`.
+>
+> Dictionary comprehensions create dictionaries from arbitrary key and value expressions. `dct = {x: x*100 for x in (1, 2, 3)}` will create a dictionary `dct = {1: 100, 2: 200, 3: 300}`.
 
 ---
 

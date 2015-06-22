@@ -105,5 +105,16 @@ def linear_merge(list1, list2):
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
     
-    # are we meant to do something more complicated like a list comparison?
-    return sorted(list1 + list2)
+    new_list = []
+    while 0 not in (len(list1), len(list2)):
+        if list1[0] <= list2[0]:
+            new_list.append(list1[0])
+            list1.pop(0)
+        else:
+            new_list.append(list2[0])
+            list2.pop(0)
+
+    # accounts for lists of differing lengths
+    new_list += list1 + list2
+
+    return new_list

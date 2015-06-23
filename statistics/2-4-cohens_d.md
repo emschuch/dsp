@@ -27,4 +27,9 @@ The mean birth weight of first babies was 7.201 lbs and for other babies was 7.3
 
 To calculate the effect, the Cohen's d formula is the difference between the mean of each group over the pooled standard deviation. The effect size of first versus other babies was small, only -0.089 standard deviations. This doesn't seem very significant.
 
-It is also worth noting that this may not be representative of the population as whole, since, as the author noted in the first chapter, some groups of women were deliberately oversampled for the NSFG study. It is possible that the effect size would change if we account for this oversampling.
+```python
+effect2 = thinkstats2.CohenEffectSize(first.prglngth, other.prglngth)
+effect2
+```
+
+For pregnancy length, the effect size is 0.029 standard deviations between first babies and others, meaning first babies are just slightly late. The effect of birth order on pregnancy length is less than its effect on birth weight, though both effects are small and may not be significant. It is also worth noting that this may not be representative of the population as whole, since, as the author noted in the first chapter, some groups of women were deliberately oversampled for the NSFG study. It is possible that the effect sizes would change if we account for this oversampling.

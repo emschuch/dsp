@@ -25,6 +25,6 @@ effect
 
 The average birth weight of first babies was 7.201 lbs and the mean for other babies was 7.326 lbs, an absolute difference of 0.125 lbs. If we only look at the mean, first babies are lighter than others. 
 
-To calculate the effect, the Cohen's d formula is the difference between the mean of each group over the pooled standard deviation. The effect size of first versus other babies was small, only -0.089 standard deviations.
+To calculate the effect, the Cohen's d formula is the difference between the mean of each group over the pooled standard deviation. The effect size of first versus other babies was small, only -0.089 standard deviations. This doesn't seem very significant.
 
 It is also worth noting that this may not be representative of the population as whole, since, as the author noted in the first chapter, some groups of women were deliberately oversampled for the NSFG study. It is possible that the effect size would change if we account for this oversampling.

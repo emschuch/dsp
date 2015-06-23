@@ -26,7 +26,7 @@ thinkplot.Pmfs([pmf])
 thinkplot.Show(xlabel = 'num kids in household', ylabel = 'probability')
 ```
 
-ADD IMAGE
+![png](../img/output_5_0.png)
 
 Define <tt>BiasPmf</tt>.
 
@@ -70,7 +70,7 @@ thinkplot.Pmfs([pmf, biased])
 thinkplot.Show(xlabel = 'num kids in household', ylabel = 'probability')
 ```
 
-ADD IMAGE
+![png](../img/output_11_0.png)
 
 Compute the means of the two Pmfs.
 

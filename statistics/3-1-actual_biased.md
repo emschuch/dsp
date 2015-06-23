@@ -82,3 +82,5 @@ print 'biased mean:', biased.Mean()
 actual mean: 1.02420515504
 
 biased mean: 2.40367910066
+
+As mentioned in the book, results would be biased if taking a random sample of children because families with no children would not be represented at all. Since the largest group in the actual distribution are families with 0 children, their exclusion causes the mean number of children in the household to shift from about 1.0 to about 2.4 in the biased sample.

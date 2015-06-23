@@ -23,7 +23,7 @@ effect = thinkstats2.CohenEffectSize(first.totalwgt_lb, other.totalwgt_lb
 effect
 ```
 
-The average birth weight of first babies was 7.201 lbs and the mean for other babies was 7.326 lbs, an absolute difference of 0.125 lbs. If we only look at the mean, first babies are lighter than others. 
+The mean birth weight of first babies was 7.201 lbs and for other babies was 7.326 lbs, a difference of 0.125 lbs. If we only look at the mean, first babies are lighter than others. 
 
 To calculate the effect, the Cohen's d formula is the difference between the mean of each group over the pooled standard deviation. The effect size of first versus other babies was small, only -0.089 standard deviations. This doesn't seem very significant.
 

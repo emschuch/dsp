@@ -27,7 +27,7 @@ thinkplot.Show(xlabel = 'number', ylabel = 'probability')
 
 ![png](../img/ex4-2_01.png)
 
-As we expected, every value in the range has the same probability of occuring, a probablity of 0.001, or 1 in 1000. This makes sense, since we generated 1000 numbers. I would expect that if we had generated 100 numbers, they should each have a 0.01 probability of occuring.
+As we expected, every value in the range has the same probability of occuring, a probablity of 0.1%, or 1 in 1000. This makes sense, since we generated 1000 numbers. I would expect that if we had generated 100 numbers, they should each have a 1% probability of occuring.
 
 Plot their CDF
 

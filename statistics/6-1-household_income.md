@@ -49,7 +49,7 @@ pdf = thinkstats2.EstimatedPdf(sample, label='income')
 thinkplot.Pdf(pdf)
 ```
 
-![png](../img/ex6-2_01.png)
+![png](../img/ex6-1_02.png)
 
 Calculate summary statistics with a higher upper bound:
 

@@ -23,7 +23,7 @@ import numpy as np
 hinc2.main()
 ```
 
-ADD IMAGE
+![png](../img/ex6-1_01.png)
 
 Read in data frame and calculate summary statistics:
 
@@ -49,7 +49,7 @@ pdf = thinkstats2.EstimatedPdf(sample, label='income')
 thinkplot.Pdf(pdf)
 ```
 
-ADD IMAGE
+![png](../img/ex6-2_01.png)
 
 Calculate summary statistics with a higher upper bound:
 

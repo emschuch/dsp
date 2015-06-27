@@ -7,3 +7,109 @@ Write a function that takes a goal-scoring rate, lam, in goals per game, and sim
 Write another function that simulates many games, stores the estimates of lam, then computes their mean error and RMSE.
 
 Is this way of making an estimate biased? Plot the sampling distribution of the estimates and the 90% confidence interval. What is the standard error? What happens to sampling error for increasing values of lam?
+
+Import modules:
+
+```python
+%matplotlib inline
+
+import thinkstats2
+import thinkplot
+import math
+import random
+import numpy as np
+import estimation
+```
+
+Write a function that takes a goal-scoring rate, lam, in goals per game, and simulates a game by generating the time between goals until the total time exceeds 1 game, then returns the number of goals scored. 
+
+There are 90 minutes in a typical soccer game, so I wrote my function to run while time is less than 90.
+
+```python
+def SimulateGame(lam):
+    goals = 0
+    time = 0
+    while time < 90:
+        goal_min = 90*(random.expovariate(lam))
+        time += goal_min
+        goals += 1
+        
+    return goals
+```
+
+Write another function that simulates many games, stores the estimates of lam, then computes their mean error and RMSE.
+
+```python
+def EstimateScores(lam=2, m=10000):
+    def VertLine(x, y=1):
+        thinkplot.Plot([x, x], [0, y], color='0.8', linewidth=3)
+
+    scores = []
+    for _ in range(m):
+        L = SimulateGame(lam)
+        scores.append(L)
+        
+    cdf = thinkstats2.Cdf(scores)
+    ci = cdf.Percentile(5), cdf.Percentile(95)
+    VertLine(ci[0])
+    VertLine(ci[1])
+
+    print "Confidence Interval: %f, %f" % ci
+    print 'RMSE L:', estimation.RMSE(scores, lam)
+    print 'Mean error L:', estimation.MeanError(scores, lam)
+    
+    # plot the CDF
+    thinkplot.Cdf(cdf)
+    thinkplot.Show(root='estimation1',
+                   xlabel='sample mean',
+                   ylabel='CDF',
+                   title='Sampling distribution')
+```
+
+I ran the simulation of games with various values of <tt>lam</tt>
+
+```python
+EstimateScores(2)
+```
+
+OUTPUT:<br>
+Confidence Interval: 1.000000, 6.000000<br>
+RMSE L: 1.73798734173<br>
+Mean error L: 1.0074
+
+![png](../img/ex8-3_01.png)
+
+```python
+EstimateScores(5)
+```
+
+OUTPUT:<br>
+Confidence Interval: 3.000000, 10.000000<br>
+RMSE L: 2.44380850314<br>
+Mean error L: 0.9898
+
+![png](../img/ex8-3_02.png)
+
+```python
+EstimateScores(10)
+```
+
+OUTPUT:<br>
+Confidence Interval: 6.000000, 16.000000<br>
+RMSE L: 3.31132903832<br>
+Mean error L: 1.0113
+
+![png](../img/ex8-3_03.png)
+
+```python
+EstimateScores(50)
+```
+
+OUTPUT:<br>
+Confidence Interval: 40.000000, 63.000000<br>
+RMSE L: 7.17848869888<br>
+Mean error L: 0.9847
+
+![png](../img/ex8-3_04.png)
+
+These distributions are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger as well as the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.

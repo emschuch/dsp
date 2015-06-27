@@ -112,4 +112,4 @@ Mean error L: 0.9847
 
 ![png](../img/ex8-3_04.png)
 
-These distributions are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger as well as the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.
+These distributions are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger, as does the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.

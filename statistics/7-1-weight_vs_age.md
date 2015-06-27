@@ -48,7 +48,7 @@ for percent in [75, 50, 25]:
 thinkplot.Show(xlabel = 'age of mother', ylabel = 'weight of baby (lb)')
 ```
 
-![png](../img/ex7-1_02.png)
+![png](../img/ex7-1_03.png)
 
 Calculate Pearson's and Spearman's Correlation:
 

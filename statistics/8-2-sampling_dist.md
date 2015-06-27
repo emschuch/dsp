@@ -120,7 +120,7 @@ Mean error Lm: 0.137680500667
 
 ![png](../img/ex8-2_04.png)
 
-I constrained the axis in <tt>PlotEstimate</tt> so that all plots would be comparable. We can see the 90% confidence interval shrinking and slope of the graph getting steeper as the value of n increases. This means that the accuracy of estimation is increasing as we increase the sample size, as one would expect.
+I constrained the axis in <tt>PlotEstimate</tt> so that all plots would be comparable. We can see the 90% confidence interval becoming more narrow and slope of the graph getting steeper as the value of n increases. This means that the accuracy of estimation is increasing as we increase the sample size, as one would expect.
 
 We can see that this holds true when plotting the sample size, n, versus the RMSE of L. As the sample size increases, the RMSE decreases:
 

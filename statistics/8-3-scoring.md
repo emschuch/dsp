@@ -72,7 +72,7 @@ I ran the simulation of games with various values of <tt>lam</tt>
 EstimateScores(2)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.000000, 6.000000<br>
 RMSE L: 1.73798734173<br>
 Mean error L: 1.0074
@@ -83,7 +83,7 @@ Mean error L: 1.0074
 EstimateScores(10)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 6.000000, 16.000000<br>
 RMSE L: 3.32576307033<br>
 Mean error L: 1.0373
@@ -94,7 +94,7 @@ Mean error L: 1.0373
 EstimateScores(100)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 85.000000, 118.000000<br>
 RMSE L: 9.9816181053<br>
 Mean error L: 1.0359
@@ -105,11 +105,11 @@ Mean error L: 1.0359
 EstimateScores(1000)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 949.000000, 1053.000000<br>
 RMSE L: 31.9367985246<br>
 Mean error L: 0.4667
 
 ![png](../img/ex8-3_04b.png)
 
-These distributions are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger, as does the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.
+These plots are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger, as does the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.

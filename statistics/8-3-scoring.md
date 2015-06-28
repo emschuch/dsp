@@ -80,36 +80,36 @@ Mean error L: 1.0074
 ![png](../img/ex8-3_01.png)
 
 ```python
-EstimateScores(5)
-```
-
-OUTPUT:<br>
-Confidence Interval: 3.000000, 10.000000<br>
-RMSE L: 2.44380850314<br>
-Mean error L: 0.9898
-
-![png](../img/ex8-3_02.png)
-
-```python
 EstimateScores(10)
 ```
 
 OUTPUT:<br>
 Confidence Interval: 6.000000, 16.000000<br>
-RMSE L: 3.31132903832<br>
-Mean error L: 1.0113
+RMSE L: 3.32576307033<br>
+Mean error L: 1.0373
 
-![png](../img/ex8-3_03.png)
+![png](../img/ex8-3_02b.png)
 
 ```python
-EstimateScores(50)
+EstimateScores(100)
 ```
 
 OUTPUT:<br>
-Confidence Interval: 40.000000, 63.000000<br>
-RMSE L: 7.17848869888<br>
-Mean error L: 0.9847
+Confidence Interval: 85.000000, 118.000000<br>
+RMSE L: 9.9816181053<br>
+Mean error L: 1.0359
 
-![png](../img/ex8-3_04.png)
+![png](../img/ex8-3_03b.png)
+
+```python
+EstimateScores(1000)
+```
+
+OUTPUT:<br>
+Confidence Interval: 949.000000, 1053.000000<br>
+RMSE L: 31.9367985246<br>
+Mean error L: 0.4667
+
+![png](../img/ex8-3_04b.png)
 
 These distributions are step graphs, which makes sense since they plot the goals scored in a game, and goals are whole numbers. As the value of <tt>lam</tt> increases, the size of the confidence interval grows larger, as does the RMSE of L. The increasing RMSE indicates that L is a biased estimator of lam.

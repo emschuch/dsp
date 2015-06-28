@@ -74,9 +74,9 @@ print 'Upper 7.0:', higher_pct
 Upper 6.0: 0.333333333333<br>
 Upper 7.0: 0.571428571429
 
-So in this sample, 33% of housholds have less than the mean income if th upper bound is 6.0, but 57% of households are below the mean if the upper bound is 7.0.
+So, in this sample, 33% of housholds have less than the mean income if the upper bound is 6.0, but 57% of households are below the mean if the upper bound is 7.0.
 
-Out of my own curiosity, I graphed the PDF to see what the shape looks like.
+Out of my own curiosity, I plotted the PDF to see what the shape looks like.
 
 ```python
 pdf = thinkstats2.EstimatedPdf(sample, label='income')

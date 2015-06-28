@@ -57,8 +57,6 @@ Mean error L: 0.202643535225
 
 ![png](../img/ex8-2_01b.png)
 
-The output is slightly different than when initially running <tt>estimation.Estimate3</tt> because <tt>random</tt> has created a different sample.
-
 Now run the estimation again with a few different values for n:
 
 ```python

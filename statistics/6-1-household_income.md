@@ -35,7 +35,7 @@ sample = np.power(10, log_sample)
 mean, median = density.Summarize(sample)
 ```
 
-Summary:<br>
+> Summary:<br>
 mean 74278.7075312<br>
 std 93946.9299635<br>
 median 51226.4544789<br>
@@ -50,7 +50,7 @@ sample2 = np.power(10, log_sample2)
 mean, median = density.Summarize(sample2)
 ```
 
-Summary:<br>
+> Summary:<br>
 mean 124267.397222<br>
 std 559608.501374<br>
 median 51226.4544789<br>
@@ -71,7 +71,7 @@ print 'Upper 6.0:', lower_pct
 print 'Upper 7.0:', higher_pct
 ```
 
-Upper 6.0: 0.333333333333<br>
+> Upper 6.0: 0.333333333333<br>
 Upper 7.0: 0.571428571429
 
 So, in this sample, 33% of housholds have less than the mean income if the upper bound is 6.0, but 57% of households are below the mean if the upper bound is 7.0.

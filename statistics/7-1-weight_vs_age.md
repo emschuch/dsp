@@ -60,7 +60,7 @@ print "Pearson's Corr: %f" % p_corr
 print "Spearman's Corr: %f" % s_corr
 ```
 
-Pearson's Corr: 0.068834<br>
+> Pearson's Corr: 0.068834<br>
 Spearman's Corr: 0.094610
 
 Both Pearson's and Spearman's correlation are close to 0, indicating very little correlation between a mother's age and her child's weight at birth. However, Spearman's correlation is slightly further from 0, indicating that this data is being affected by outliers. The initial scatterplot does show various outliers, while the bulk of observations cluster between 6 and 10 lbs for nearly every age. When plotting the weights as percentiles, the weight of babies at birth increases slightly for each percentile between about age 18 up to about age 37 for mothers, then begins to drop as mothers enter their 40s. The increase is small, less than half a pound, but this relationship was not visible in the initial scatterplot.

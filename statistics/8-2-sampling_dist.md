@@ -17,20 +17,7 @@ import numpy as np
 import estimation
 ```
 
-Run estimations of exponential distributions:
-
-```python
-estimation.Estimate3(10, 1000)
-```
-
-OUTPUT:<br>
-Experiment 3<br>
-rmse L 0.837245962958<br>
-rmse Lm 1.10416146817<br>
-mean error L 0.219357453804<br>
-mean error Lm 0.209722895894
-
-Create a mashup function combining <tt>Estimate3</tt> and <tt>SimulateSample</tt> to plot the distribution:
+I created a mashup function combining <tt>Estimate3</tt> and <tt>SimulateSample</tt> to compute the confidence interval and RMSE and to plot the distribution:
 
 ```python
 def PlotEstimate(n=10, m=1000):    
@@ -39,23 +26,18 @@ def PlotEstimate(n=10, m=1000):
 
     lam = 2
     means = []
-    medians = []
     for _ in range(m):
         xs = np.random.exponential(1.0/lam, n)
         L = 1 / np.mean(xs)
-        Lm = math.log(2) / thinkstats2.Median(xs)
         means.append(L)
-        medians.append(Lm)
-        
+
     cdf = thinkstats2.Cdf(means)
     ci = cdf.Percentile(5), cdf.Percentile(95)
     VertLine(ci[0])
     VertLine(ci[1])
     print "Confidence Interval: %f, %f" % ci
     print 'RMSE L:', estimation.RMSE(means, lam)
-    print 'RMSE Lm:', estimation.RMSE(medians, lam)
     print 'Mean error L:', estimation.MeanError(means, lam)
-    print 'Mean error Lm:', estimation.MeanError(medians, lam)
 
     # plot the CDF
     thinkplot.Cdf(cdf)
@@ -68,12 +50,10 @@ def PlotEstimate(n=10, m=1000):
 PlotEstimate()
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.260047, 3.648992<br>
 RMSE L: 0.816290000105<br>
-RMSE Lm: 1.55977405886<br>
-Mean error L: 0.202643535225<br>
-Mean error Lm: 0.639327149577
+Mean error L: 0.202643535225
 
 ![png](../img/ex8-2_01b.png)
 
@@ -85,12 +65,10 @@ Now run the estimation again with a few different values for n:
 PlotEstimate(25)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.504487, 2.920092<br>
 RMSE L: 0.456487646874<br>
-RMSE Lm: 0.692089056781<br>
-Mean error L: 0.106193760384<br>
-Mean error Lm: 0.147386274541
+Mean error L: 0.106193760384
 
 ![png](../img/ex8-2_02b.png)
 
@@ -98,12 +76,10 @@ Mean error Lm: 0.147386274541
 PlotEstimate(50)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.579438, 2.550010<br>
 RMSE L: 0.290646902054<br>
-RMSE Lm: 0.460710412211<br>
-Mean error L: 0.0261784221271<br>
-Mean error Lm: 0.120297398884
+Mean error L: 0.0261784221271
 
 ![png](../img/ex8-2_03b.png)
 
@@ -111,12 +87,10 @@ Mean error Lm: 0.120297398884
 PlotEstimate(100)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.716304, 2.375090<br>
 RMSE L: 0.202077456126<br>
-RMSE Lm: 0.318963314165<br>
-Mean error L: 0.0200191074379<br>
-Mean error Lm: 0.0588702095124
+Mean error L: 0.0200191074379
 
 ![png](../img/ex8-2_04b.png)
 
@@ -124,12 +98,10 @@ Mean error Lm: 0.0588702095124
 PlotEstimate(500)
 ```
 
-OUTPUT:<br>
+> OUTPUT:<br>
 Confidence Interval: 1.856731, 2.161175<br>
 RMSE L: 0.0907252606581<br>
-RMSE Lm: 0.133119470049<br>
-Mean error L: 0.00632567242885<br>
-Mean error Lm: 0.0104914001808
+Mean error L: 0.00632567242885
 
 ![png](../img/ex8-2_05b.png)
 

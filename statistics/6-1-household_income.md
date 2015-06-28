@@ -40,16 +40,7 @@ mean 74278.7075312<br>
 std 93946.9299635<br>
 median 51226.4544789<br>
 skewness 4.94992024443<br>
-pearson skewness 0.736125801914<br>
-
-Graph the PDF
-
-```python
-pdf = thinkstats2.EstimatedPdf(sample, label='income')
-thinkplot.Pdf(pdf)
-```
-
-![png](../img/ex6-1_02.png)
+pearson skewness 0.736125801914
 
 Calculate summary statistics with a higher upper bound:
 
@@ -64,5 +55,32 @@ mean 124267.397222<br>
 std 559608.501374<br>
 median 51226.4544789<br>
 skewness 11.6036902675<br>
-pearson skewness 0.391564509277<br>
+pearson skewness 0.391564509277
 
+Changing the upper bound from 6.0 to 7.0 increases the mean dramatically, from about $74,000 to about $124,000 – a difference of $50,000. This increase in mean also affects the fraction of households that would be considered below the mean:
+
+```python
+inc = df.income
+lower = [x for x in inc if x < 74278.7075312]
+lower_pct = float(len(lower)) / len(inc)
+
+higher = [x for x in inc if x < 124267.397222]
+higher_pct = float(len(higher)) / len(inc)
+
+print 'Upper 6.0:', lower_pct
+print 'Upper 7.0:', higher_pct
+```
+
+Upper 6.0: 0.333333333333<br>
+Upper 7.0: 0.571428571429
+
+So in this sample, 33% of housholds have less than the mean income if th upper bound is 6.0, but 57% of households are below the mean if the upper bound is 7.0.
+
+Out of my own curiosity, I graphed the PDF to see what the shape looks like.
+
+```python
+pdf = thinkstats2.EstimatedPdf(sample, label='income')
+thinkplot.Pdf(pdf)
+```
+
+![png](../img/ex6-1_02.png)

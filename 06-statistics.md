@@ -27,7 +27,35 @@ Communicate the problem, how you solved it, and the solution, within each of the
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin?
 
-REPLACE THIS TEXT WITH YOUR RESPONSE
+> To solve this problem I used Bayes's Theorem and tested two hypotheses:
+>
+> * A: Elvis was an identical twin
+> * B: Elvis was a fraternal twin
+>
+> The probability of identical twins is 1/300 and of fraternal twins is 1/125. I considered these the priors for each hypothesis. For likelihood, I considered the likelihood of whether or not the other twin was a boy and an identical twin, or a boy and a fraternal twin. For hypothesis A, the likelihood is 1, since it is unlikely that a boy and girl can be identical twins. There is a slight imbalance of genders in most parts of the world, but I wanted to keep things simple, so for hypothesis B, I used a likelihood of 0.5. I used the following code to compute the results.
+
+```python
+priorA = 1.0/300
+priorB = 1.0/125
+
+likelyA = 1
+likelyB = 0.5
+
+normalize = priorA * likelyA + priorB * likelyB
+
+postA = priorA * likelyA / normalize
+
+postB = priorB * likelyB / normalize
+
+print 'prob A:', postI
+print 'prob B:', postF
+```
+
+> OUTPUT:<br>
+prob A: 0.454545454545<br>
+prob B: 0.545454545455
+>
+> There is about a 45% probability that Elvis's twin brother was identical.
 
 ---
 
@@ -36,6 +64,6 @@ REPLACE THIS TEXT WITH YOUR RESPONSE
 
 How do frequentist and Bayesian statistics compare?
 
-REPLACE THIS TEXT WITH YOUR RESPONSE
+> Frequentist and Bayesian statistics differ in the way in which they treat probability. The frequentist focuses on the probability of the data, given the hypothesis, p(D|H). This approach treats the hypothesis as either true or false, 1 or 0. This approach is called frequentist because it is concerned with the frequency with which one expects to observe the data, given some hypothesis about the world. Bayesian statistics focuses on p(H|D), the probability of the hypothesis, given the data. In this approach, the hypothesis may be true or false, 1 or 0, or some probability in between.
 
 ---

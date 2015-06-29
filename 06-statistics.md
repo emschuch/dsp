@@ -47,8 +47,8 @@ postA = priorA * likelyA / normalize
 
 postB = priorB * likelyB / normalize
 
-print 'prob A:', postI
-print 'prob B:', postF
+print 'prob A:', postA
+print 'prob B:', postB
 ```
 
 > OUTPUT:<br>
